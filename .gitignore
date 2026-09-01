@@ -6,3 +6,6 @@ node_modules/
 .wolf/cron-state.json
 .wolf/designqc-captures/
 .wolf/suggestions.json
+.wolf/daemon.log
+.wolf/designqc-report.json
+shots/
