@@ -9,3 +9,4 @@ node_modules/
 .wolf/daemon.log
 .wolf/designqc-report.json
 shots/
+.vercel
