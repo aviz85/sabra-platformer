@@ -128,6 +128,18 @@
       "related_bugs": [],
       "occurrences": 1,
       "last_seen": "2026-09-01T23:08:00+03:00"
+    },
+    {
+      "id": "bug-010",
+      "timestamp": "2026-09-01T23:13:00+03:00",
+      "error_message": "Recovered behaviour.mjs reported 8/11 checks passed after integration",
+      "file": "/private/tmp/claude-501/-Users-aviz-fable-5-1/fbc2e8e9-a5f8-4a85-a91c-8b38b7c0cdb2/scratchpad/behaviour.mjs",
+      "root_cause": "The harness was explicitly written for the deleted stub level and uses hard-coded stub checkpoint/hazard/entity coordinates; the integrator later removed src/_stubs and made all tests load real levels.",
+      "fix": "Did not change production code based on stale coordinates. Ran the real-level tour harness instead; it passed 20/20 checks across all five levels through credits with zero errors.",
+      "tags": ["qa", "obsolete-test", "stubs", "tour"],
+      "related_bugs": ["bug-007"],
+      "occurrences": 1,
+      "last_seen": "2026-09-01T23:13:00+03:00"
     }
   ]
 }
