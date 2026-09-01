@@ -8,12 +8,10 @@
   html,body{margin:0;height:100%;background:#0b0a14;overflow:hidden;font-family:monospace}
   #stage{position:fixed;inset:0;display:flex;align-items:center;justify-content:center}
   canvas{image-rendering:pixelated;image-rendering:crisp-edges;position:absolute}
-  #hint{position:fixed;bottom:8px;left:0;right:0;text-align:center;color:#6b6885;font-size:12px;pointer-events:none}
 </style>
 </head>
 <body>
 <div id="stage"><canvas id="game" width="320" height="180"></canvas><canvas id="ui" width="640" height="360"></canvas></div>
-<div id="hint">← → move · Z/Space jump · X spit garinim · Shift dash (Yalla!) · P pause · M mute</div>
 <script type="module" src="./src/main.js"></script>
 </body>
 </html>

@@ -1,4 +1,121 @@
 {
   "version": 1,
-  "bugs": []
+  "bugs": [
+    {
+      "id": "bug-001",
+      "timestamp": "2026-09-01T18:51:52.299Z",
+      "error_message": "Wrong reference: 400 should be 292",
+      "file": "src/parallax/telaviv.js",
+      "root_cause": "Used \"400\" instead of \"292\"",
+      "fix": "Changed 400 → 292",
+      "tags": [
+        "auto-detected",
+        "wrong-reference",
+        "js"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-01T18:51:52.299Z"
+    },
+    {
+      "id": "bug-002",
+      "timestamp": "2026-09-01T19:00:47.636Z",
+      "error_message": "Incorrect value in code",
+      "file": "src/levels/level2.js",
+      "root_cause": "Had ');      // hummus table\nfill(152, 153, 12, 13, '",
+      "fix": "Changed to ');      // hummus table\nfill(161, 164, 13, 13, '",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "js"
+      ],
+      "related_bugs": [],
+      "occurrences": 2,
+      "last_seen": "2026-09-01T19:01:04.157Z"
+    },
+    {
+      "id": "bug-003",
+      "timestamp": "2026-09-01T19:00:55.884Z",
+      "error_message": "Significant refactor of ",
+      "file": "src/levels/level2.js",
+      "root_cause": "2 lines replaced/restructured",
+      "fix": "Rewrote 6→4 lines (2 removed) | Also: prop('CRATE', px(193), G); prop('CRATE', px(193), ; prop('LAMP', px(200), G);",
+      "tags": [
+        "auto-detected",
+        "refactor",
+        "js"
+      ],
+      "related_bugs": [],
+      "occurrences": 2,
+      "last_seen": "2026-09-01T19:01:07.363Z"
+    },
+    {
+      "id": "bug-004",
+      "timestamp": "2026-09-01T19:50:28.165Z",
+      "error_message": "Incorrect value in code",
+      "file": "src/parallax/ayalon.js",
+      "root_cause": "Had '.rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr.'",
+      "fix": "Changed to 'DAN'",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "js"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-01T19:50:28.165Z"
+    },
+    {
+      "id": "bug-005",
+      "timestamp": "2026-09-01T19:50:34.587Z",
+      "error_message": "Significant refactor of ",
+      "file": "src/parallax/ayalon.js",
+      "root_cause": "3 lines replaced/restructured",
+      "fix": "Rewrote 12→16 lines (3 removed) | Also: for (let i = 0; i < WIN1.length; i++) {; const wn = WIN1[i]; if (!vis(bx, wn.x, 1)) continu | Also: const tk = Math.floor(t * 8);; for (let i = 0; i < WIN2.length; i++) {",
+      "tags": [
+        "auto-detected",
+        "refactor",
+        "js"
+      ],
+      "related_bugs": [],
+      "occurrences": 3,
+      "last_seen": "2026-09-01T19:50:50.601Z"
+    },
+    {
+      "id": "bug-006",
+      "timestamp": "2026-09-01T22:55:00+03:00",
+      "error_message": "Error: listen EPERM: operation not permitted 127.0.0.1",
+      "file": "tools/smoke.mjs",
+      "root_cause": "The restricted execution sandbox blocked the smoke harness from binding its localhost HTTP server; this was not a game defect.",
+      "fix": "Ran the browser harness outside the restricted sandbox, where all five levels completed at about 62 FPS with zero console errors.",
+      "tags": ["qa", "sandbox", "localhost", "smoke"],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-01T22:55:00+03:00"
+    },
+    {
+      "id": "bug-007",
+      "timestamp": "2026-09-01T23:05:00+03:00",
+      "error_message": "Claude workflow stopped with fix:ui, fix:art, fix:level, fix:parallax, qa-2, and final-smoke marked failed",
+      "file": "src/engine/game.js",
+      "root_cause": "The workers exhausted their Claude session quota after landing only part of the 14-item QA fix round.",
+      "fix": "Recovered the full workflow and subagent logs, audited landed edits, completed car patrol/speed, safe tutorial pickup, HAZARD2 selection, background-traffic alpha, and universal pit shading, then reran the full validation matrix.",
+      "tags": ["workflow", "qa", "levels", "art", "parallax", "engine"],
+      "related_bugs": ["bug-004", "bug-005"],
+      "occurrences": 1,
+      "last_seen": "2026-09-01T23:05:00+03:00"
+    },
+    {
+      "id": "bug-008",
+      "timestamp": "2026-09-01T23:02:00+03:00",
+      "error_message": "SyntaxError: ./src/levels/index.js does not provide an export named default",
+      "file": "src/levels/index.js",
+      "root_cause": "A one-off diagnostic imported the registry as a default export even though the contract registry exports the named LEVELS binding.",
+      "fix": "Changed the diagnostic to `import { LEVELS }` and reran it successfully.",
+      "tags": ["diagnostic", "esm", "import"],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-01T23:02:00+03:00"
+    }
+  ]
 }

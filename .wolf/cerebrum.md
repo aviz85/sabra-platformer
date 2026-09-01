@@ -11,6 +11,8 @@
 ## Key Learnings
 
 - **Project:** fable-5-1
+- The original Claude workflow is preserved under `~/.claude/projects/-Users-aviz-fable-5-1/fbc2e8e9-a5f8-4a85-a91c-8b38b7c0cdb2/`; `workflows/wf_47f7ae0d-973.json` contains the full prompts/QA report and the matching `subagents/workflows/` logs show which partial fixes landed.
+- Browser QA tools bind a localhost server and therefore need to run outside a restricted filesystem/network sandbox; the normal production gate is level/art validators, smoke for levels 1–5, UI, audio, then playtest.
 
 ## Do-Not-Repeat
 
