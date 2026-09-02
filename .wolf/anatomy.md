@@ -1,7 +1,7 @@
 # anatomy.md
 
-> Auto-maintained by OpenWolf. Last scanned: 2026-09-01T19:51:43.105Z
-> Files: 55 tracked | Anatomy hits: 0 | Misses: 0
+> Auto-maintained by OpenWolf. Last scanned: 2026-09-02T11:04:22.070Z
+> Files: 62 tracked | Anatomy hits: 0 | Misses: 0
 
 ## ../../../private/tmp/claude-501/-Users-aviz-fable-5-1/fbc2e8e9-a5f8-4a85-a91c-8b38b7c0cdb2/scratchpad/
 
@@ -15,13 +15,17 @@
 - `tour.mjs` — Tour every loaded real level: start, screenshot, teleport near exit, walk in, verify level-clear cha (~1299 tok)
 - `traffic.js` — ───────────────────────────── traffic helpers ───────────────────────────── (~2377 tok)
 
+## ../curvy-hebrew-font/
+
+- `build.mjs` — Render a glyph at pixel size `px`, with its baseline at (x,y) and left edge at x. (~2031 tok)
+- `glyphs.js` — גומיה / Gumiya — a fun, curvy Hebrew display face. (~2452 tok)
+
 ## ./
 
 - `.gitignore` — Git ignore rules (~37 tok)
 - `.vercelignore` — Production deployment exclusions for tests, captures, and project-internal metadata (~8 tok)
 - `CLAUDE.md` — OpenWolf (~57 tok)
 - `CONTRACT.md` — SABRA! — חיי היום־יום בישראל · Pixel-art 2D platformer — MODULE CONTRACT (~2777 tok)
-- `favicon.ico` — Procedural 16×16 SABRA favicon (~1 KB)
 - `index.html` — SABRA! — !צבר · Everyday life in Israel (~238 tok)
 
 ## .claude/

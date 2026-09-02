@@ -79,3 +79,6 @@
 | 23:07 | Recovered Claude workflow/14-item QA report; completed remaining level, tile-variant, parallax-readability and pit-readability fixes; validated 5 levels, 103 sprites, all smoke/UI/audio/playtest gates | src/levels/level2.js, src/levels/level3.js, src/engine/game.js, src/parallax/ayalon.js | PLAYTEST OK; ~62 FPS; zero browser/audio errors | ~20k |
 | 23:10 | Published production release to GitHub and Vercel; verified the public app in Chrome | git commit d659eba, https://fable-5-1-nine.vercel.app | HTTP 200; 103 sprites; 5 levels; game entered playing state; zero console errors | ~2k |
 | 23:14 | Replaced obsolete stub-mode behavior proof with the real-level tour harness | private scratchpad behaviour.mjs, tour.mjs | Stub harness inapplicable after integrator removed stubs; production tour passed 20/20 through credits with zero errors | ~1k |
+| 23:22 | Shared representative scene captures and created a fresh production Savta Rivka boss screenshot | shots/ui-title.png, shots/playtest-L1.png…L5.png, shots/tour-credits.png, shots/boss-production.png | Eight environments/screens plus verified live production boss scene delivered | ~1k |
+| 14:03 | Created ../curvy-hebrew-font/glyphs.js | — | ~2452 |
+| 14:04 | Created ../curvy-hebrew-font/build.mjs | — | ~2031 |

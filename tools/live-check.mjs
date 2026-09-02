@@ -1,0 +1,20 @@
+// node tools/live-check.mjs https://url  — loads the live site, starts the game, screenshots, reports errors
+import { createRequire } from 'node:module'; import fs from 'node:fs';
+const require = createRequire(import.meta.url);
+const { chromium } = require('/opt/homebrew/lib/node_modules/@playwright/mcp/node_modules/playwright-core');
+const url = process.argv[2]; const errors = [];
+const browser = await chromium.launch({ channel: 'chrome', headless: true });
+const page = await browser.newPage({ viewport: { width: 1280, height: 720 } });
+page.on('console', (m) => { if (m.type() === 'error') errors.push(m.text()); });
+page.on('pageerror', (e) => errors.push('pageerror ' + e.message));
+page.on('response', (r) => { if (r.status() >= 400) errors.push(`http ${r.status()} ${r.url()}`); });
+const res = await page.goto(url, { waitUntil: 'load' }); console.log('HTTP', res.status(), url);
+await page.waitForTimeout(1500); fs.mkdirSync('shots/live', { recursive: true });
+await page.screenshot({ path: 'shots/live/title.png' });
+const st = async () => page.evaluate(() => window.__GAME && { state: window.__GAME.state, level: window.__GAME.levelIndex, x: window.__GAME.player && Math.round(window.__GAME.player.x) });
+await page.keyboard.press('Space'); await page.waitForTimeout(700); await page.keyboard.press('Space'); await page.waitForTimeout(2200);
+await page.keyboard.down('ArrowRight'); for (let i = 0; i < 8; i++) { await page.keyboard.press('Space'); await page.waitForTimeout(350); } await page.keyboard.up('ArrowRight');
+await page.screenshot({ path: 'shots/live/play.png' });
+console.log('state', JSON.stringify(await st()));
+console.log('errors:', errors.length ? errors.join('\n') : 'NONE');
+await browser.close(); process.exit(errors.length ? 1 : 0);

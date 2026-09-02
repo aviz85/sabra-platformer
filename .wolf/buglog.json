@@ -140,6 +140,18 @@
       "related_bugs": ["bug-007"],
       "occurrences": 1,
       "last_seen": "2026-09-01T23:13:00+03:00"
+    },
+    {
+      "id": "bug-011",
+      "timestamp": "2026-09-01T23:21:00+03:00",
+      "error_message": "TypeError: Cannot read properties of undefined (reading 'snapTo')",
+      "file": "shots/boss-production.png",
+      "root_cause": "The one-off screenshot script referenced `game.camera`; the engine exposes its Camera instance as `game.cam`.",
+      "fix": "Retried with `game.cam.snapTo(player)` and captured the real production boss scene successfully.",
+      "tags": ["screenshot", "qa", "camera", "playwright"],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-01T23:21:00+03:00"
     }
   ]
 }
